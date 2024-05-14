@@ -24,17 +24,25 @@ openapi: 'POST /v1/query/{query_id}/execute'
     # setup Dune Python client
     dune = DuneClient.from_env()
 
+    query = QueryBase(
+        name="Sample Query",
+        query_id=1215383,
+    )
+
     result = dune.run_query(
-        query = 12345, # pass in query to run 
+        query = query,
         performance = 'large' # optionally define which tier to run the execution on (default is "medium")
     )
 
+    # go over the results returned
+    for row in result.result.rows: 
+        print (row) # as an example we print the rows
     ```
 </Accordion>
 
-If the query has parameters and you don't add them in your API call, it will just run the default params. You may add query parameters as part of the POST params data.
+If the query has parameters and you don't add them in your API call, it will just run with the default params. You may add query parameters as part of the POST params data.
 
-You can choose to include a `performance` parameter, by default it will use the "medium" performance tier which consumes 10 credits. "large" will use 20 credits and be faster.
+You can choose to include a `performance` parameter, by default it will use the "medium" performance tier which consumes 10 credits. "large" will use 20 credits and are faster.
 
 Returns an execution_id associated with the triggered query execution and the state of the execution.
 

@@ -62,6 +62,7 @@
         "api-reference/overview/query-parameters",
         "api-reference/overview/what-is-execution-id",
         "api-reference/overview/rate-limits",
+        "api-reference/overview/pagination",
         "api-reference/overview/troubleshooting",
         "api-reference/overview/billing",
         "api-reference/overview/faq"
@@ -119,11 +120,11 @@
     "linkedin": "https://www.linkedin.com/company/duneanalytics"
   },
   "analytics": {
-    "amplitude": {
-      "apiKey": "f5f9693ef08393e7ab6106db82824661"
-    },
     "ga4": {
       "measurementId": "G-H1G057R0KN"
+    },
+    "gtm": {
+      "tagId": "GTM-P46XP3Z5"
     }
   }
 }
